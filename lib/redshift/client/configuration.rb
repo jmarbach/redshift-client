@@ -26,7 +26,7 @@ module Redshift
         private
 
         def parse_redshift_url
-          uri = URI.parse(ENV['REDSHIFT_URL'])
+          uri = URI.parse(URI.encode(ENV['REDSHIFT_URL']))
           {
             host: uri.host,
             port: uri.port,
